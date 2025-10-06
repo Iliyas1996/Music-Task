@@ -1,0 +1,15 @@
+{
+  "language": "English (United States)",
+  "fakerLocale": "en",
+  "titleTemplates": ["{adj} {noun}", "{noun} of {noun2}", "{verb} {noun}"],
+  "adjectives": ["Lonely","Fast","Blue","Silent","Golden","Neon","Velvet","Crimson","Empty"],
+  "nouns": ["Car","City","Dream","Heart","River","Sky","Star","Night","Road"],
+  "verbs": ["Running","Falling","Rising","Chasing","Calling"],
+  "firstNames": ["Alex","Jamie","Taylor","Jordan","Sam","Casey","Morgan"],
+  "lastNames": ["Smith","Johnson","Taylor","Brown","Davis","Miller","Wilson"],
+  "bandPrefixes": ["The","Los","Les","DJ"],
+  "bandNouns": ["Waves","Machines","Riders","Collective","Syndrome","Breeze"],
+  "albumAdjectives": ["Bright","Lost","Hidden","Electric","Acoustic"],
+  "albumNouns": ["Stories","Moments","Chapters","Echoes"],
+  "genres": ["Pop","Indie","Rock","Electronic","Jazz","Ambient"]
+}

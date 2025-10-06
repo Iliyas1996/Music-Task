@@ -1,0 +1,14 @@
+{
+  "fakerLocale": "en",
+  "titleTemplates": ["{adj} {noun}", "{verb} the {noun}"],
+  "adjectives": ["Lonely", "Wild", "Electric", "Golden"],
+  "nouns": ["Dream", "River", "Night", "Heart"],
+  "verbs": ["Chasing", "Burning", "Echoing"],
+  "firstNames": ["John", "Amy", "Michael"],
+  "lastNames": ["Smith", "Brown", "Johnson"],
+  "bandPrefixes": ["The", "New", "Electric"],
+  "bandNouns": ["Tigers", "Stars", "Waves"],
+  "albumAdjectives": ["Golden", "Neon", "Broken"],
+  "albumNouns": ["Sky", "Dreams", "Voices"],
+  "genres": ["Rock", "Pop", "Indie"]
+}

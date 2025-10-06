@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Music Showcase</title></head>
+<body>
+  <h1>Music Showcase Backend Works!</h1>
+  <script>
+    fetch("/api/songs")
+      .then(r => r.json())
+      .then(data => {
+        document.body.innerHTML += "<pre>" + JSON.stringify(data, null, 2) + "</pre>";
+      });
+  </script>
+</body>
+</html>
