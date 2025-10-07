@@ -3,7 +3,7 @@ import Header from './components/Header'
 import SongCard from './components/SongCard'
 import { motion } from 'framer-motion'
 
-const API_BASE = 'http://localhost:5000'
+const API_BASE = 'https://music-task-6sbr.onrender.com'
 
 export default function App() {
   const [locale, setLocale] = useState('en_US')
