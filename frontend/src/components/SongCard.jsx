@@ -1,6 +1,5 @@
 import React from 'react'
 
-// Small deterministic hash function to generate color from text
 function hashHue(str) {
   let h = 0
   for (let i = 0; i < str.length; i++) {
@@ -19,7 +18,6 @@ export default function SongCard({ song }) {
       ? `https://music-task-6sbr.onrender.com${song.audioUrl.startsWith('/') ? '' : '/'}${song.audioUrl}`
       : null
 
-  // Generate unique SVG gradient per song if it's a data URI
   const uniqueSvg = (() => {
     if (!isSvgData) return null
     const hue = hashHue(song.title + song.artist)
