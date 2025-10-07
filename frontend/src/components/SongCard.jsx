@@ -1,23 +1,35 @@
 import React from 'react'
 
-const API_BASE = 'https://music-task-6sbr.onrender.com'
-
 export default function SongCard({ song }) {
-  const coverUrl = song.cover?.startsWith('http')
-    ? song.cover
-    : `${API_BASE}${song.cover}`
+  const isSvgData = song.cover?.startsWith('data:image/svg+xml')
 
-  const audioUrl = song.audioUrl?.startsWith('http')
-    ? song.audioUrl
-    : `${API_BASE}${song.audioUrl}`
+  const audioUrl =
+    song.audioUrl?.startsWith('http') || song.audioUrl?.startsWith('data:')
+      ? song.audioUrl
+      : song.audioUrl
+      ? `https://music-task-6sbr.onrender.com${song.audioUrl.startsWith('/') ? '' : '/'}${song.audioUrl}`
+      : null
 
   return (
     <div className="bg-white rounded-lg shadow p-3">
-      <img
-        src={coverUrl}
-        alt={song.title}
-        className="w-full h-40 object-cover rounded"
-      />
+      {isSvgData ? (
+        <div
+          className="w-full h-40 rounded"
+          dangerouslySetInnerHTML={{
+            __html: decodeURIComponent(song.cover.split(',')[1]),
+          }}
+        />
+      ) : (
+        <img
+          src={song.cover}
+          alt={song.title}
+          className="w-full h-40 object-cover rounded"
+          onError={(e) => {
+            e.target.src = 'https://via.placeholder.com/300x300?text=No+Image'
+          }}
+        />
+      )}
+
       <div className="mt-3">
         <h3 className="font-semibold">{song.title}</h3>
         <p className="text-sm text-gray-600">{song.artist}</p>
@@ -26,7 +38,7 @@ export default function SongCard({ song }) {
         </p>
         <div className="mt-2 flex items-center justify-between">
           <div className="text-sm">Likes: {song.likes ?? '-'}</div>
-          <audio controls src={audioUrl} className="w-28" />
+          {audioUrl && <audio controls src={audioUrl} className="w-28" />}
         </div>
       </div>
     </div>
